@@ -14,16 +14,14 @@ module Guard
     # Print the result of the command(s), if there are results to be printed.
     def run_on_modifications(*files)
       files.each do |path|
-        ::Guard::CodeClimate::Dsl.analyze(path)
-      end
-    end
-
-    class Dsl
-      class << self
-        def analyze(path)
-          ::Guard::Dsl.new.eager("codeclimate analyze #{Shellwords.escape(path)}")
-        end
+        ::Guard::Dsl.new.eager("codeclimate analyze #{Shellwords.escape(path)}")
       end
     end
   end
+
+  #class Dsl
+  #  def analyze(path)
+  #    
+  #  end
+  #end
 end
