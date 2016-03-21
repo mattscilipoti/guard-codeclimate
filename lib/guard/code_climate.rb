@@ -1,5 +1,6 @@
 require 'guard/compat/plugin'
 require 'guard/code_climate/version'
+require 'guard/shell'
 require 'shellwords'
 
 module Guard
@@ -18,8 +19,10 @@ module Guard
     end
 
     class Dsl
-      def analyze(path)
-        ::Guard::Dsl.eager("codeclimate analyze #{Shellwords.escape(path)}")
+      class << self
+        def analyze(path)
+          ::Guard::Dsl.new.eager("codeclimate analyze #{Shellwords.escape(path)}")
+        end
       end
     end
   end

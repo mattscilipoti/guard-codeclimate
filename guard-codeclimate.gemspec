@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.summary      = "Guard gem for running Code Climate analysis"
   s.homepage     = "https://github.com/metavida/guard-codeclimate"
   s.license      = 'MIT'
-  s.version      = Guard::CodeClimate::VERSION
+  s.version      = Guard::CodeClimateVersion::VERSION
 
   s.description  = <<-DESC
     Guard::CodeClimate automatically runs `codeclimate analyze`

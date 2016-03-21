@@ -1,7 +1,7 @@
 require "guard/compat/test/helper"
-require "guard/shell"
+require "guard/code_climate"
 
-RSpec.describe Guard::Shell do
+RSpec.describe Guard::CodeClimate do
   describe "#start" do
     it "works" do
       subject.start
