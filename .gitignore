@@ -1,2 +1,8 @@
+# Generated files
 *.gem
+
+# This is a lib, don't lock dependency versions
 Gemfile.lock
+
+# rbenv / rvm stuff
+.ruby-version
