@@ -1,4 +1,4 @@
-# Guard::Shell
+# Guard::CodeClimate
 
 This little guard allows you to run shell commands when files are altered.
 
@@ -9,21 +9,21 @@ Make sure you have [guard](http://github.com/guard/guard) installed.
 
 Install the gem with:
 
-    gem install guard-shell
+    gem install guard-codeclimate
 
 Or add it to your Gemfile:
 
-    gem 'guard-shell'
+    gem 'guard-codeclimate'
 
 And then add a basic setup to your Guardfile:
 
-    guard init shell
+    guard init codeclimate
 
 
 ## Usage
 
 If you can do something in your shell, or in ruby, you can do it when a file changes
-with guard-shell. It simply executes the block passed to watch if a change is 
+with guard-shell. It simply executes the block passed to watch if a change is
 detected, and if anything is returned from the block it will be printed. For example
 
 ``` ruby

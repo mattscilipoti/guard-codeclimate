@@ -1,5 +1,5 @@
 module Guard
-  module ShellVersion
+  module CodeClimate
     VERSION = '0.7.1'
   end
 end
