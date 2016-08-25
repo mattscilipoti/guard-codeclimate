@@ -4,18 +4,22 @@ require 'guard/shell'
 require 'shellwords'
 
 module Guard
+  # Guard gem/plugin to manage CodeClimate runs
+  # TODO: compose guard-shell vs. inherit.
+  #   Inheritence provides unused functionality
   class CodeClimate < Shell
-    # Call #run_on_change for all files which match this guard.
+    # Run analyzer for this project
     def run_all
-      run_on_modifications(Compat.matching_files(self, Dir.glob('{,**/}*{,.*}')))
+      guard_shell.eager('codeclimate analyze')
     end
 
-    # Print the result of the command(s), if there are results to be printed.
+    # Ignore individual modifications
     def run_on_modifications(files)
-      files.each do |path|
-        puts "Performing Code Climate analysis of #{path.inspect}"
-        ::Guard::Dsl.new.eager("codeclimate analyze #{Shellwords.escape(path)}")
-      end
+      # noop
+    end
+
+    private def guard_shell
+      @guard_shell ||= ::Guard::Dsl.new
     end
   end
 end
